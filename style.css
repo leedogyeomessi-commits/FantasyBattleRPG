@@ -1,13 +1,17 @@
 body {
-  background: #111;
+  background: radial-gradient(circle at top, #222, #000);
   color: #eee;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align: center;
 }
 
+h1 {
+  margin-top: 30px;
+}
+
 button {
-  padding: 10px 15px;
-  margin: 5px;
+  padding: 10px 16px;
+  margin: 6px;
   font-size: 14px;
   background: #222;
   color: #eee;
@@ -17,4 +21,46 @@ button {
 
 button:hover {
   background: #444;
+}
+
+#battle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 160px;
+  margin: 30px 0;
+}
+
+.character {
+  font-size: 90px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* 공격 */
+.attack {
+  transform: translateX(40px);
+}
+
+/* 피격 */
+.hit {
+  filter: brightness(200%);
+  transform: translateX(-30px);
+}
+
+/* 흔들림 */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+#log {
+  margin-top: 15px;
+  min-height: 20px;
 }
